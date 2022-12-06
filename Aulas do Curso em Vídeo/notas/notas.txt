@@ -1,0 +1,245 @@
+print('Olá mundo!')
+
+\n -> Quebra a linha
+, end=' ' -> continua a linha(no final do print) (valor entre a aspa aparece entre elas)
+
+Tipos primitivos:
+int - números inteiros
+float - números decimais(usa ponto)
+bool - True or False
+str - 'Entre aspas'
+
+('str{}'.format(valores aqui aparecem nas chaves))
+
+Operadores aritiméticos:
++ adição
+- subtração
+* multiplicação
+/ divisão
+** potência
+// divisão inteira(Parte inteira da divisão sem vírgula)
+% resto da divisão
+
+'=' significa recebe e '==' é igualdade da soma
+
+#potência pode ser por pow(base(expoente))
+
+Ordem
+1 - ()
+2 - **
+3 - *, /, //, %
+4 - +, -
+
+Para fazer raiz quadrada elevar por 1/2, pois x**(1/2) = raiz de x
+
+Uso de .format(valor)
+{} = 'valor'
+{:20} = 'valor' com 20 espaços (completando ou excluíndo)
+{:>20} = 'valor' com 20 espaços escrito a direita
+{:<20} = 'valor' com 20 espaços escrito a esquerda
+{:^20} = 'valor' centralizado com 20 espaços
+{=:^20} = 'valor' centralizado com 20 espaços e '=' preenchendo espaço
+{:.xf} = aparece um valor numérico com x casas decimais
+
+Utilização de módulos
+Import + módulo -> todas as funcionalidades
+from + módulo + import -> funcionalidades requeridas
+
+[] -> Lista
+[x] -> aparece o elemento x
+[x:y] -> seleciona de x a y sem o y
+[x:y:z] -> vai do x ao y sem o y, pulando a quantidade z d número
+[:x] -> todos até o x sem o x
+[x:] -> de x até o final
+[x::y] -> vai de x até o final pulando d y em y
+
+Analisar str
+frase = termo
+len(frase) -> quantos caracteres tem frase
+frase.count('o') -> quantas vezes aparece o.
+frase.count('o', x, y) -> quantas vezes aparece o de x a y(sem o y)
+frase.find('nan') -> a posição do nan - mostranddo apenas a casa que começa
+                     valor inexistente aparece na posição -1
+'xyz' in frase -> se há xyz no termo
+|
+Transformação
+frase.replace('nan', 'xyz') -> ele vai trocar nan do termo por xyz
+frase.upper() -> deixa em maiúsculas
+frase.lower() -> deixa em minúsculas
+frase.capitalize() -> deixa só o primeiro caractere em maiúsculo
+frase.title() -> deixa a primeira letra da cada palavra em maiúsculo
+frase.strip() -> remove espaços no início e no final
+      rstrip() -> remove espaços a direita
+      lstrip() -> remove espaços a esquerda
+|
+Divisão
+frase.split() -> Divide nos espaços a frase em strings próprias
+|
+Junção
+'-'.join(frase) -> Junta strings com - entre elas
+           -> frase com strings divididas
+
+Condições
+if condição:
+	bloco true
+else:
+	bloco false
+|
+(if dentro de eslse fica 'elif')
+
+|Simplificação|
+print('algo' if condição else 'outra coisa')
+
+*Cores no terminal
+ANSI -> escape sequence (\) (não pertence diretamente a linguagem, mas a linguagem é compatível)
+\033[m + código da cor
+Entre [ e m pode-se específicar estyle, text, back
+\033[0;33;44m
+0 -> texto normal, pode ser trocado por 1(negrito), 4(sublinhado), 7(negativo)
+33 -> cor, varia de 30 a 37 -> (30)Branco, (31)Vermelho, (32)Verde, (33)Amarelo
+(34)Azul, (35)Roxo, (36)Ciano, (37)Cinza
+44 -> cor de fundo, vai de 40 até 47 na mesma ordem da cor da fonte
+
+Repetição:
+|
+A partir do comando for:
+for c range(0, x):
+laço c no intervalo(entre 0 e x)
+terceiro elemento indica a interação
+(0, x, 2)
+de 0 a x pulando de dois em dois
+(x, 0, -1)
+de x a 0, subtraíndo um d cada valor
+|
+A partir do comando while:
+while(enquanto) é ou n é assim:
+Comando break encerra a repetição independente da regra
+comando continue reinicia independente da posição
+
+Variávei Compostas:
+Tuplas
+Estruturas imutáveis.
+organizadas como strings
+	tupla1 + tupla2 = elementos de ambas as tuplas na ordem tupla1, tupla2
+Possível repetição sem Range:
+	for c in tupla
+		c = elementos da tupla um d cada vez. Ao fim, se encerra o ciclo.
+	for posição, c in enumerate(tupla):
+		posição = posição atual da tupla
+		c = elementos da tupla na 'posiçaõ'
+comandos:
+	enumarate(tupla) = posição do elemento
+	len(tupla) = tamanho da tupla
+	sorted(tupla) = elementos em ordem
+	tupla.count(elemento) = quantas vezes o elemento aparece na tupla
+	tupla.index(elemento) = mostra a posição do elemento dentro da tupla (caso tenha mais de um = apenas a posição do primeiro)
+	tupla.index(elemento, posição) = mostra a posição do elemento contando a partir daquela posição
+	del(tupla) = exclui a tupla
+|
+Listas
+São coleções totalmente mutáveis 
+
+lista.append('elemento') -> adiciona o elemento a lista
+Para usuário:
+            lista.append(input()) 
+
+lista.insert(posição, 'elemento') -> adiciona elemento na posição, e os q vem depois tem a posição somada +1 
+
+Remover:
+del lista[posição] -> deleta o elemento da posição listada
+lista.pop(posição) -> automaticamente deleta o último elemento, mas pode ser usado para qualquer posição citando-a
+lanche.remove('elemento') -> remove o elemento, não pela posição, mas pelo título 
+
+list(range(valores do range, serão posicionados em uma lista)) 
+
+lista.sort() -> altera a lista para ordem
+lista.sort(reverse = True) -> altera para ordem contrária 
+
+len(lista) -> quantidade d elementos 
+
+if lista1 = lista2:
+           As listas são conectadas e não cópia.
+Elif você quiser uma cópia:
+           lista1 = lista2[:]
+|
+logo,
+if lista1.append(lista2[:]) and lista1.append(lista3[:])
+lista1 == [[lista1], [lista3]] #listas são elementos
+|
+Dicionários
+valores com índice alteravel
+dicionário = {índice¹:elemento¹, índice²:emento²}
+adicionar elementos com:
+	dicionário[índice] = elemento
+
+índices são reconhecidos com dicionário.keys()
+elementos com dicionário.values()
+ambos com dicionários.items()
+
+for i, c in dicionário.items():
+	i == key
+	c == value
+para adicionar valor d dicionário a lista sem copiar:
+	lista.append(dicionário.copy())
+|
+Possível misturar variáveis compostas
+ex:
+([], [])
+[{}, {}]
+[[], []]
+
+Funções
+def função(valor):
+	#comando repetido com valor = variável 
+
+
+função(variável)
+
+quando n sabemos quantidade de valores podemos desempacotar:
+def função(* valor):
+	
+
+função(qualquer quantidade de valores, ele recebe numa tupla)
+
+def função(valor):
+
+
+valor = [] #Se valor já for uma variável comoposta, não é necessário desempacotar
+parametro dentro da função só vale durante a função, a n ser com comando
+global variável
+
+
+Interactive Help
+help() -> Acesso ao manual de comandos e funções internas
+escrever comando depois com prompt próprio ou dentro do código, com comando entre os parenteses
+fechar com -> Quit
+__doc__ -> Tambem informa, porém não é o mesmo, ent pode vir com mudanças
+acessivel com print(comando.__doc__)
+
+docstrings
+string de documentação -> é semelhante ao manual apresentado no help()
+vem abaixo da função com 3 aspas (antes do código da função)
+
+parâmetros opcionais
+dar um valor para parâmetro na definição da função para tornar parêmtro opcional
+
+Return
+retorna valor para variável que receba função
+def função(parâmetro):
+	x = valor definido na função
+	return x
+
+resp = função(valor)
+resp == x
+
+Tratamento de Erro:
+try:
+	operação
+except [aqui pode ser esperada uma classe específica para o erro]:
+	Caso falhe
+else:
+	Caso dê certo
+finelly:
+	Depois do except ou do else
+
+erro.__class__ => mostra a classe do erro
